@@ -789,4 +789,13 @@ function toggleMessage(id){
 </script>
 
 </body>
+    <audio id="bgMusic" loop>
+    <source src="always.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+document.addEventListener("click", function () {
+    document.getElementById("bgMusic").play();
+}, { once: true });
+</script>
 </html>
