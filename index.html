@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To My Favorite</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#F8F1E7;
+    color:#5C4631;
+    overflow-x:hidden;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+.hero{
+    min-height:100vh;
+    background:linear-gradient(180deg,#7D8D69,#B49374);
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    position:relative;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.hero p{
+    margin:8px 0;
+}
+
+button{
+    margin-top:20px;
+    padding:14px 24px;
+    border:none;
+    border-radius:25px;
+    background:#8B6B4A;
+    color:white;
+    cursor:pointer;
+}
+
+.section{
+    padding:60px 20px;
+}
+
+.card{
+    max-width:850px;
+    margin:auto;
+    margin-bottom:30px;
+    background:white;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+.hidden{
+    display:none;
+}
+
+.pin-screen{
+    min-height:100vh;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:20px;
+}
+
+.pin-screen input{
+    width:70px;
+    height:70px;
+    font-size:28px;
+    text-align:center;
+    border-radius:15px;
+    border:2px solid #B49374;
+}
+
+.petal{
+    position:absolute;
+    top:-30px;
+    font-size:25px;
+    animation:fall linear infinite;
+}
+
+.petal:nth-child(1){
+    left:10%;
+    animation-duration:10s;
+}
+
+.petal:nth-child(2){
+    left:50%;
+    animation-duration:12s;
+}
+
+.petal:nth-child(3){
+    left:80%;
+    animation-duration:9s;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(360deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="petal">🌸</div>
+<div class="petal">🌷</div>
+<div class="petal">🍂</div>
+
+<section class="hero" id="opening">
+
+    <h1>🌷 To My Favorite</h1>
+
+    <p>Made with love by Ruth 🤎</p>
+
+    <p>Since the day you made me smile.</p>
+
+    <button onclick="showPin()">
+        Open ♡
+    </button>
+
+</section>
+
+<section class="pin-screen" id="pinScreen">
+
+    <h2>Enter your secret PIN</h2>
+
+    <p>You've received something special.</p>
+
+    <br>
+
+    <input
+        type="password"
+        maxlength="4"
+        id="pinInput">
+
+    <button onclick="checkPin()">
+        Continue
+    </button>
+
+</section>
+
+<div id="mainContent" style="display:none;">
+  <!-- LOVE LETTER -->
+<section class="section">
+
+    <div class="card">
+
+        <h2>💌 To My Favorite, Dede</h2>
+
+        <br>
+
+        <p>
+            I don't think I've known you long enough
+            to understand everything about you,
+            but I know enough to realize how grateful
+            I am that our paths crossed.
+        </p>
+
+        <br>
+
+        <p>
+            Thank you for staying,
+            even if our time together hasn't been very long.
+        </p>
+
+        <br>
+
+        <p>
+            Thank you for your patience,
+            your kindness,
+            and especially your smile —
+            the one I secretly adore
+            more than I can explain.
+        </p>
+
+        <br>
+
+        <p>
+            I hope that as time goes by,
+            we can continue learning
+            how to understand each other,
+            respect each other,
+            and choose each other,
+            even on difficult days.
+        </p>
+
+        <br>
+
+        <p>
+            Love isn't always about grand gestures.
+            Sometimes it's simply staying,
+            listening,
+            forgiving,
+            and trying again.
+        </p>
+
+        <br>
+
+        <p>
+            Thank you for being here.
+            Thank you for being you.
+        </p>
+
+        <br><br>
+
+        <p>
+            Love,<br>
+            Ruth 🤎
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- AUTUMN WARM BOUQUET -->
+<section class="section">
+
+    <div class="card">
+
+        <h2>🌷 Autumn Warm Bouquet</h2>
+
+        <p>
+            Click each flower.
+        </p>
+
+        <br>
+
+        <div style="font-size:40px;">
+
+            <span onclick="toggleMessage('rose')"
+            style="cursor:pointer;">
+                🌹
+            </span>
+
+            <span onclick="toggleMessage('baby')"
+            style="cursor:pointer;">
+                🤍
+            </span>
+
+            <span onclick="toggleMessage('olive')"
+            style="cursor:pointer;">
+                🌿
+            </span>
+
+            <span onclick="toggleMessage('pampas')"
+            style="cursor:pointer;">
+                🌾
+            </span>
+
+        </div>
+
+        <br>
+
+        <p id="rose"
+        style="display:none;">
+
+            You make me feel at home.
+
+        </p>
+
+        <p id="baby"
+        style="display:none;">
+
+            Thank you for the little things you do.
+
+        </p>
+
+        <p id="olive"
+        style="display:none;">
+
+            May we continue to grow together.
+
+        </p>
+
+        <p id="pampas"
+        style="display:none;">
+
+            Thank you for bringing comfort into my life.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- MEMORY PLACE -->
+<section class="section">
+
+    <div class="card">
+
+        <h2>🗺️ Places That Hold Us</h2>
+
+        <br>
+
+        <h3>
+            📍 Cafe Ateku,
+            Padang Bulan,
+            Medan
+        </h3>
+
+        <br>
+
+        <p>
+
+            Maybe to others,
+            it was just a café.
+
+        </p>
+
+        <br>
+
+        <p>
+
+            But to me,
+            it became a place where laughter,
+            conversations,
+            and little moments with you
+            found a home.
+
+        </p>
+
+    </div>
+
+</section>
+  <!-- VIDEO -->
+<section class="section">
+
+    <div class="card">
+
+        <h2>🎥 A Little Movie For You</h2>
+
+        <p>
+            Some memories don't need perfect pictures
+            to become unforgettable.
+        </p>
+
+        <br>
+
+        <video
+            controls
+            width="100%"
+            style="border-radius:20px;">
+
+            <source
+                src="memory_video.mp4"
+                type="video/mp4">
+
+            Your browser does not support the video tag.
+
+        </video>
+
+        <br><br>
+
+        <p style="font-style:italic;">
+
+            "I may not have hundreds of photos with you,
+            but I remember your smile,
+            the way we talked,
+            and the little moments
+            that became my favorite memories."
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- PLAYLIST -->
+<section class="section">
+
+    <div class="card">
+
+        <h2>🎶 Our Playlist</h2>
+
+        <br>
+
+        <p>
+            ♫ <strong>I Love You, I'm Sorry</strong><br>
+            Some love comes with apologies and sincerity.
+        </p>
+
+        <hr><br>
+
+        <p>
+            ♫ <strong>The Only Exception</strong><br>
+            Because sometimes,
+            one person changes the way we see love.
+        </p>
+
+        <hr><br>
+
+        <p>
+            ♫ <strong>Always (DVD)</strong><br>
+            A promise to keep choosing each other.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- PHOTOS -->
+<section class="section">
+
+    <div class="card">
+
+        <h2>
+            📸 The Photos We Haven't Taken Yet
+        </h2>
+
+        <br>
+
+        <div style="
+            display:flex;
+            flex-wrap:wrap;
+            gap:15px;
+            justify-content:center;">
+
+            <div class="card" style="width:140px;text-align:center;padding:15px;">
+                🖼️
+                <p>Photo Booth</p>
+                <small>Reserved for us.</small>
+            </div>
+
+            <div class="card" style="width:140px;text-align:center;padding:15px;">
+                ⛰️
+                <p>Hiking Together</p>
+                <small>Complaining halfway up.</small>
+            </div>
+
+            <div class="card" style="width:140px;text-align:center;padding:15px;">
+                🍳
+                <p>Cooking Date</p>
+                <small>Even if we burn the food.</small>
+            </div>
+
+            <div class="card" style="width:140px;text-align:center;padding:15px;">
+                🎬
+                <p>Movie Date</p>
+                <small>Pretending to watch.</small>
+            </div>
+
+            <div class="card" style="width:140px;text-align:center;padding:15px;">
+                📷
+                <p>Our First Photo</p>
+                <small>Coming soon.</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- OPEN WHEN -->
+<section class="section">
+
+    <div class="card">
+
+        <h2>💌 Open When...</h2>
+
+        <br>
+
+        <details>
+            <summary>Open when you're sad</summary>
+
+            <br>
+
+            <p>
+                Hai, Dede.<br><br>
+
+                Kalau kamu sedang membaca surat ini, mungkin hari ini tidak berjalan seperti yang kamu harapkan. Mungkin ada sesuatu yang membuatmu sedih, kecewa, lelah, atau mungkin kamu bahkan tidak tahu kenapa perasaanmu terasa berat.<br><br>
+
+                Aku cuma mau bilang satu hal:<br><br>
+
+                <strong>Kamu tidak harus selalu kuat.</strong><br><br>
+
+                Tidak apa-apa kalau hari ini kamu ingin menangis. Tidak apa-apa kalau hari ini kamu lelah. Tidak apa-apa kalau hari ini kamu merasa dunia sedang tidak berpihak padamu.<br><br>
+
+                Aku tahu kamu sering menyimpan semuanya sendiri. Kamu sering memilih diam daripada bercerita. Tapi percayalah, kamu tidak harus menghadapi semuanya sendirian.<br><br>
+
+                Aku berharap aku bisa ada di sampingmu sekarang. Aku berharap aku bisa memelukmu dan bilang kalau semuanya akan baik-baik saja.<br><br>
+
+                Kalau kamu merasa tidak ada yang mengerti, ingatlah bahwa ada aku yang selalu berusaha memahami kamu.<br><br>
+
+                Dan kalau hari ini terasa berat, jangan pikirkan besok dulu. Cukup lewati hari ini. Satu jam demi satu jam. Satu langkah demi satu langkah.<br><br>
+
+                Aku bangga sama kamu.<br><br>
+
+                Bangga karena kamu sudah bertahan sejauh ini. Bangga karena kamu masih berusaha. Bangga karena kamu tetap berjalan meskipun lelah.<br><br>
+
+                Jangan terlalu keras pada dirimu sendiri, ya?<br><br>
+
+                Istirahat kalau memang lelah. Menangis kalau memang ingin menangis. Dan kalau kamu rindu, ingat bahwa ada seseorang yang sangat menyayangimu.<br><br>
+
+                Aku.<br><br>
+
+                Dengan seluruh cinta yang aku punya,<br>
+                Kaka 🤎
+            </p>
+
+        </details>
+
+        <br>
+
+        <details>
+            <summary>Open when you miss me</summary>
+
+            <br>
+
+            <p>
+                Hai, Dede.<br><br>
+
+                Kalau kamu lagi kangen aku, berarti sekarang aku juga lagi kangen kamu.<br><br>
+
+                Mungkin kita lagi jauh. Mungkin kita lagi sibuk. Mungkin kita ga bisa ngobrol sebanyak yang kita mau.<br><br>
+
+                Tapi perasaan aku ke kamu ga berubah hanya karena jarak atau waktu.<br><br>
+
+                Jadi kalau kamu kangen, bayangin aku lagi duduk di samping kamu, dengerin semua cerita kamu, dan nyuruh kamu makan kalau belum makan.<br><br>
+
+                Aku kangen kamu juga.<br><br>
+
+                Selalu.<br><br>
+
+                — Kaka 🤎
+            </p>
+
+        </details>
+
+        <br>
+
+        <details>
+            <summary>Open when we fight</summary>
+
+            <br>
+
+            <p>
+                Hai, Dede.<br><br>
+
+                Kalau kamu buka ini setelah kita berantem, aku cuma mau kamu ingat satu hal.<br><br>
+
+                Aku ga pernah ingin melawan kamu.<br><br>
+
+                Kita berdua mungkin sama-sama kesal, sama-sama sedih, atau sama-sama keras kepala saat itu.<br><br>
+
+                Tapi masalahnya bukan kamu.<br>
+                Dan masalahnya juga bukan aku.<br><br>
+
+                Masalahnya adalah masalahnya.<br><br>
+
+                Aku tetap memilih kamu bahkan saat kita sedang tidak baik-baik saja.<br><br>
+
+                Jadi kalau suatu hari kita bertengkar, jangan lupa bahwa aku masih sayang sama kamu.<br><br>
+
+                — Kaka 🤎
+            </p>
+
+        </details>
+
+        <br>
+
+        <details>
+            <summary>Open when you're overthinking</summary>
+
+            <br>
+
+            <p>
+                Hai, Dede.<br><br>
+
+                Aku tahu isi kepala kamu kadang terlalu ramai.<br><br>
+
+                Kamu memikirkan banyak kemungkinan, banyak ketakutan, dan banyak hal yang bahkan belum tentu terjadi.<br><br>
+
+                Jadi untuk sebentar saja, baca ini perlahan.<br><br>
+
+                Kamu dicintai.<br>
+                Kamu dihargai.<br>
+                Kamu penting.<br><br>
+
+                Tidak semua hal buruk yang ada di pikiranmu adalah kenyataan.<br><br>
+
+                Dan apa pun yang sedang kamu takutkan sekarang, kamu tidak harus menghadapinya sendirian.<br><br>
+
+                Ada aku.<br><br>
+
+                — Kaka 🤎
+            </p>
+
+        </details>
+
+    </div>
+
+</section>
+<!-- FUTURE STARS -->
+<section class="section">
+
+    <div class="card">
+
+        <h2>🌌 Future Stars</h2>
+
+        <p>
+            Things I still want to do with you:
+        </p>
+
+        <br>
+
+        <ul style="line-height:2;">
+
+            <li>
+                ⭐ Take photo booth pictures together.
+            </li>
+
+            <li>
+                ⭐ Go hiking and complain halfway up the mountain.
+            </li>
+
+            <li>
+                ⭐ Have a cooking date and laugh over burnt food.
+            </li>
+
+            <li>
+                ⭐ Go on a movie date and secretly talk during the film.
+            </li>
+
+            <li>
+                ⭐ Finally have our first proper photo together.
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- SECRET ENDING -->
+<section class="section">
+
+    <div class="card" style="text-align:center;">
+
+        <h2>🐻 One Last Thing...</h2>
+
+        <br>
+
+        <p>
+
+            Thank you for making me believe
+            that even short moments
+            can become beautiful memories.
+
+        </p>
+
+        <br>
+
+        <p>
+
+            If one day you forget
+            how loved you are,
+
+            come back here.
+
+        </p>
+
+        <br>
+
+        <p>
+
+            I'll remind you.
+
+            Every single time.
+
+        </p>
+
+        <br><br>
+
+        <p>
+
+            Love,
+
+            <br>
+
+            Ruth 🤎
+
+        </p>
+
+        <br>
+
+        <button onclick="window.scrollTo({
+            top:0,
+            behavior:'smooth'
+        })">
+
+            Read Again ♡
+
+        </button>
+
+    </div>
+
+</section>
+
+</div>
+
+
+<script>
+
+function showPin(){
+
+    document.getElementById("opening")
+        .style.display = "none";
+
+    document.getElementById("pinScreen")
+        .style.display = "flex";
+
+}
+
+
+function checkPin(){
+
+    const pin =
+        document.getElementById("pinInput").value;
+
+    if(pin === "2305"){
+
+        document.getElementById("pinScreen")
+            .style.display = "none";
+
+        document.getElementById("mainContent")
+            .style.display = "block";
+
+        window.scrollTo(0,0);
+
+    }
+
+    else{
+
+        alert("Hmm... try again, Dede ♡");
+
+    }
+
+}
+
+
+function toggleMessage(id){
+
+    const element =
+        document.getElementById(id);
+
+    if(element.style.display === "block"){
+
+        element.style.display = "none";
+
+    }
+
+    else{
+
+        element.style.display = "block";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
